@@ -1,4 +1,7 @@
+//polyfill to remove click delays on browsers with touch UIs.
 import FastClick from './fastclick.js';
+// 当dom加载完成时，或者 屏幕垂直、水平方向有改变进行html的根元素计算
+// 该逻辑只重设字体大小
 ((doc, win) => {
   const docEl = doc.documentElement,
     resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
@@ -20,7 +23,7 @@ if ('addEventListener' in document) {
   }, false);
 }
 
-
+//判断浏览器类型
 const system = (() => {
   let u = navigator.userAgent;
   let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
@@ -33,6 +36,7 @@ const system = (() => {
   }
   return system
 })()
+//判断当前运行环境是否为开发环境还是生产环境
 const target = process.env.NODE_ENV !== 'production' ? '' : 'http://dev.fe.ptdev.cn'; //目标网站
 export {
   target,

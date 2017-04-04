@@ -12,7 +12,9 @@ export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 export const GET_DATA_START = 'GET_DATA_START'
 export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS'
 export const TEST_DISPATCH = 'TEST_DISPATCH'
-
+export const SAVE_NOTEBOOK_DATA = 'SAVE_NOTEBOOK_DATA'
+export const UPDATE_NOTEBOOK_DATA = 'UPDATE_NOTEBOOK_DATA'
+export const DELTETE_NOTEBOOK_DATA = 'DELTETE_NOTEBOOK_DATA'
 
 
 //开始获取数据
@@ -31,8 +33,30 @@ const receivePosts = (path, json) => {
         json 
     }
 }
-
-
+//保存记事本信息
+export const saveNotebookDate = (path, data) =>{
+    console.log('Action:save notebook data')
+    return {
+        type: SAVE_NOTEBOOK_DATA,
+        data
+    }
+}
+//更新记事本信息
+export const updateNotebookData = (path, data) =>{
+    console.log('Action:update notebook data')
+    return {
+        type: UPDATE_NOTEBOOK_DATA,
+        data
+    }
+}
+//删除记事
+export const deleteNotebookData = (path, data) =>{
+    console.log('Action:delete notebook data')
+    return {
+        type: DELTETE_NOTEBOOK_DATA,
+        data
+    }
+}
 // 页面初次渲染时获取数据
 export const fetchPosts = (path, postData) => {
     let url = target + path + Tool.paramType(postData);

@@ -1,0 +1,44 @@
+.note_comment{
+    margin-top: 2.2rem;
+}
+
+.component_submit_textbox{
+	text-align: center;
+	input{
+		font-size: 0.8rem;
+		color: #333;
+		width: 90%;
+		padding: 5%;
+		margin: 0.4rem 0;
+	}
+	// input::-webkit-input-placeholder{color:#c2c2c2;}
+}
+
+.component_todo_list{
+	padding: 0.1rem;
+	margin: 0.2rem 0;
+	li{
+		padding: 10px;
+	    background-color: #f1f8ff;
+	    border: 1px solid #c8e1ff;
+	    margin-bottom: 0.1rem;
+	    overflow: hidden;
+	    position: relative;
+	    .list_delete{
+	    	height: 20px;
+	    	width: 20px;
+	    	position: absolute;
+	    	top: 50%;
+	    	right: 10px;
+	    	cursor: pointer;
+	    	margin-top: -10px;
+	    	background: url("../images/icon_delete1@3x.png") center center no-repeat;
+	    	background-size: 100% 100%;
+	    	display: block;
+	    }
+	    .list_delete:hover{
+	    	background: url("../images/icon_delete@3x.png") center center no-repeat;
+	    	background-size: 100% 100%;
+	    }
+	}
+}
